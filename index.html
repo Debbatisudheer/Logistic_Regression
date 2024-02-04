@@ -111,6 +111,46 @@
     <footer>
         <p>&copy; 2024 @sudheer debbati. All rights reserved.</p>
     </footer>
+    <p>Confusion matrix elements:</p>
+    <ul>
+        <li>True Negative (TN): Top-left element - 88</li>
+        <li>False Positive (FP): Top-right element - 17</li>
+        <li>False Negative (FN): Bottom-left element - 10</li>
+        <li>True Positive (TP): Bottom-right element - 39</li>
+    </ul>
+<p1>Additional Metrics</p1>
+    <ul>
+        <li><strong>Accuracy:</strong> (88 + 39) / (88 + 17 + 10 + 39) ≈ 0.81 (81%)</li>
+        <li><strong>Precision:</strong> 39 / (17 + 39) ≈ 0.696 (70%)</li>
+        <li><strong>Recall: </strong>39 / (10 + 39) ≈ 0.796 (80%)</li>
+        <li><strong>F1-Score:</strong> 2 * (0.696 * 0.796) / (0.696 + 0.796) ≈ 0.744 (74%)</li>
+    </ul>
+<p3>Evaluation Metrics</p3>
+    <ul>
+        <li><strong>Accuracy:</strong> Suitable for balanced datasets where the classes are evenly distributed. Not ideal for imbalanced datasets, where one class is much more frequent than the other.</li>
+        <li><strong>Precision:</strong> Useful when the cost of false positives is high. Focuses on minimizing false positives.</li>
+        <li><strong>Recall (Sensitivity or True Positive Rate):</strong> Important when the cost of false negatives is high. Focuses on capturing as many true positives as possible.</li>
+        <li><strong>F1-Score: </strong>Balances precision and recall. Suitable when there is an uneven class distribution.</li>
+        <li><strong>Area Under the Receiver Operating Characteristic (ROC AUC):</strong> Measures the ability of a model to distinguish between classes. Useful for binary classification problems.</li>
+        <li><strong>Cohen's Kappa:</strong> Takes into account the possibility of the correct prediction occurring by chance. Suitable for imbalanced datasets.</li>
+        <li><strong>Specificity:</strong> Measures the proportion of true negatives out of the total actual negatives. Important when minimizing false positives is crucial.</li>
+    </ul>
+<p4>Interpretation of Confusion Matrix</p4>
+    <ul>
+        <li><strong>True Positives (TP):</strong> 39 (Diabetic patients correctly predicted)</li>
+        <li><strong>False Positives (FP):</strong> 17 (Non-diabetic patients incorrectly predicted as diabetic)</li>
+        <li><strong>True Negatives (TN):</strong> 88 (Non-diabetic patients correctly predicted)</li>
+        <li><strong>False Negatives (FN):</strong> 10 (Diabetic patients incorrectly predicted as non-diabetic)</li>
+    </ul>
+<h2>Suggestions to Address Misclassifications</h2>
+    <ul>
+        <li><strong>Adjust Model Threshold:</strong> The default threshold for classification is usually set at 0.5. You can experiment with adjusting this threshold to balance precision and recall. Lowering the threshold might increase recall but could decrease precision, and vice versa.</li>
+        <li><strong>Feature Engineering:</strong> Consider exploring your dataset and checking if there are additional relevant features that might improve the model's performance. Feature engineering involves creating new features or transforming existing ones to provide more information to the model.</li>
+        <li><strong>Model Selection:</strong> Try different classification algorithms or ensemble methods to see if they perform better on your dataset. Some models might handle imbalanced data better than others.</li>
+        <li><strong>Data Resampling:</strong> Explore different strategies for handling imbalanced data. You've already used SMOTE for oversampling, but you can also explore other techniques or combinations of techniques.</li>
+        <li><strong>Hyperparameter Tuning:</strong> Fine-tune the hyperparameters of your chosen model. Grid search or randomized search can help you find the best combination of hyperparameters.</li>
+        <li><strong>Cross-Validation:</strong> Ensure that your model evaluation is robust by using cross-validation. This helps to get a better estimate of how well your model will perform on unseen data.</li>
+    </ul>
 </body>
 </html>
 
