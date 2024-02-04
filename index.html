@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        figure {
+            margin: 0;
+        }
+        figcaption {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
+        }
+        .image-container figure {
+            flex: 0 0 calc(50% - 10px); /* Two images in a row, with 10px margin in between */
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .image-container figure {
+                flex: 0 0 100%; /* Full width for each image on smaller screens */
+            }
+        }
+  
+    </style>
+</head>
+<body>
+    <h1>Classification Report</h1>
+
+    <!-- Display Images -->
+    <div>
+        <figure>
+        <img src="accuracy1.png" alt="Image 1">
+        <figcaption>Trained model</figcaption>
+    </figure>
+
+    <figure>
+        <img src="accuracy2.png" alt="Image 2">
+        <figcaption>Prediction on unseen data</figcaption>
+    </figure>
+    </div>
+
+    <!-- Display Classification Report -->
+    <table>
+        <tr>
+            <th></th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-Score</th>
+            <th>Support</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0.90</td>
+            <td>0.84</td>
+            <td>0.87</td>
+            <td>105</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0.70</td>
+            <td>0.80</td>
+            <td>0.74</td>
+            <td>49</td>
+        </tr>
+        <tr>
+            <td colspan="5"><strong>Accuracy:</strong> 0.82</td>
+        </tr>
+        <tr>
+            <td colspan="5"><strong>Macro avg:</strong> 0.80 (Precision), 0.82 (Recall), 0.80 (F1-Score)</td>
+        </tr>
+        <tr>
+            <td colspan="5"><strong>Weighted avg:</strong> 0.83 (Precision), 0.82 (Recall), 0.83 (F1-Score)</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
